@@ -1,13 +1,15 @@
-import React from "react"
-import Navbar from "./Navbar"
-import Footer from "./Footer"
+import React from 'react';
+import Navbar from './navbar';
+import Footer from './footer';
 
-export default function Layout({ children, navbarLinks = [], footerLinks = [] }) {
+const Layout = ({ children, navbarLinks = [] }) => {
   return (
-    <>
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
       <Navbar links={navbarLinks} />
-      <main className="min-h-[80vh] px-4 py-6">{children}</main>
-      <Footer links={footerLinks} />
-    </>
-  )
-}
+      <main className="flex-grow">{children}</main>
+      <Footer />
+    </div>
+  );
+};
+
+export default Layout;
